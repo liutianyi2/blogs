@@ -1,0 +1,37 @@
+java基础：https://blog.csdn.net/weixin_43495390/article/details/86533482
+1.c++都有这些关键字，但是往往只规定了最小字节数，所以c++常常用int32_t这种来保证字节数；python会大很多，因为类型可变需要需要存更多的信息；
+2.c++的常量字符串直接存在进程常量区；c++ string才是类，如果是string s("hello");和string s = "hello"; 那都是调用同一个构造函数string (const char* s);python构造函数无法重栽；
+3.java的string是c++的const char a[]; StringBuilder是string；至于线程安全的StringBuffer，c++的string因为可能有写时复制加锁了也不一定线程安全；python有gil，所以可以有些想当然的线程安全，但是还是最好都加锁；
+4.对应c++ vector和list；python list没有分；
+5.c++和java父子类构造函数和静态变量的先后顺序是如此，代码块初始化没有这个概念；python可以在子类构造函数任意位置调用父类构造函数；
+6.c++ map用红黑树，unordered_map用哈希表，map的模版类必须重载<操作符，unordered_map是=操作符；python dict和OrderedDict；
+7.c++没有abstract关键字，全部类函数都是虚函数的类可以模拟接口类；python对应abc类；
+8.类似；
+9.看起来好像是read和fgets，系统调用和库函数的区别；
+10.在python中对应__import__+getattr关键字；
+11.不了解；
+17.类似python的__eq__和__hash__，c++的==操作符，c++需要额外定义hash值生成类；
+18.c++中同关键字，python中的_\__前缀；
+19.c++同java由自定义的拷贝构造函数决定，python需要用copy.deepcopy实现深拷贝；
+24.c++代码在进程代码区没有类加载，python应该没有预加载；
+25.c++对应模版，python没有；
+26.python id\hash\==\is的概念；c++ ==和指针或引用直接比较，hash为std:hash；
+27.python自定义的类__hash__完全可以自定义，所有实例定义成一样的hash都可以，hashable的才能作为set和map的key；
+28.python专用序列化pickle，需要原始类定义；c++可以有protobuf等；
+29.vim是c++和python的开发工具，gcc c++编译工具无需运行环境，python解释器是运行环境无需编译工具；
+30.支持操作符重栽的python和c++无需equal；比较完全一致python用is，c++用引用或指针比较；
+34.python和c++都没有原生语法上的抽象类；
+38.python不分，c++ list和vector或者用数组+指针实现；
+40.差不多是c++ int a[]和vector<>的区别；
+43.c++有类似的迭代器，python有能迭代万物的yield；
+44.c++迭代器的++、--方法比较直观，还有经典的坑；
+46.c++ volatile类似，nginx的自旋锁就是用volatile int实现的；synchronized二者都需要单独实现；
+jvm知识：
+1.同python，c++直接core dump；
+2.c++没有，python可能对应的是gc分代回收；
+4.c++没有，python gc；
+6.c++ valgrind野指针，python profile；
+7.c++对应barrier、操作系统arena、线程私有数据等；python字节码会重排序？线程有gil；
+8.感觉python有，但不清楚；
+9.感觉python有，但不清楚；
+10.感觉python有，但不清楚；
